@@ -25,8 +25,13 @@ for (let i = 5; i >= 1; i--) {
 
 console.log('------------- # 7');
 function getMarkInfo(condition) {
-    condition === 10 ? console.log('У вас максимальный бал') : console.log('У вас средний бал');
-}
+    if (condition >= 10) {
+        console.log('У вас максимальный бал'); 
+    } else {
+        console.log('У вас средний бал');
+    };
+     
+}; 
 getMarkInfo(10)
 getMarkInfo(1)
 
@@ -94,11 +99,9 @@ console.log('Use function - calculate(enter number here) ')
 function calculate(guess) {
     let answer = 0;
     let isInteger = Number.isInteger(guess);
-    if (guess < 0) {
-        console.log('Нужно вводить только положительное число');
-    } else if (isInteger === false) {
-        console.log('Нужно вводить только целое число');
-    } else {
+    if (guess < 0 || isInteger === false) {
+        console.log('Нужно вводить только положительное и целое число');
+    }  else {
         for (i = 1; i <= guess; i++) {
             answer += i;
         }
